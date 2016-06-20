@@ -27,16 +27,9 @@ def PrintPacket(pkt):
         
     lenssid = len(pkt.getlayer(Dot11ProbeReq).info)
      
-    if pkt.addr2 =="00:08:22:d8:96:d4" : pkt.addr2 = ""			# Hisense
-    if pkt.addr2 =="70:f1:a1:94:f6:f2" : pkt.addr2 = ""			# Mini
-    if pkt.addr2 =="00:1f:3a:10:c6:71" : pkt.addr2 = ""         # Portatil c700
-    
-    if pkt.addr2 =="50:a7:2b:79:7b:95" : pkt.addr2 = "Abelardo"
-    if pkt.addr2 =="24:df:6a:ac:41:bd" : pkt.addr2 = "Liber"
-    if pkt.addr2 =="14:d6:4d:76:7a:02" : pkt.addr2 = "Liber o Lalo"
-    #if pkt.addr2 =="" : pkt.addr2 = "Pepy"
-    #if pkt.addr2 =="" : pkt.addr2 = "Cesar"
-    # 7c:91:22:3a:65:fa M.Jose ??
+    if pkt.addr2 =="00:08:22:" : pkt.addr2 = ""			# 
+    if pkt.addr2 =="70:f1:a1:" : pkt.addr2 = ""			# Mini
+    if pkt.addr2 =="00:1f:3a:" : pkt.addr2 = ""         # Portatil 
     
     if pkt.addr2 != "" :
         print "> %s SSID: %s RSSi: %d"%(pkt.addr2,pkt.getlayer(Dot11ProbeReq).info,signal_strength),time.strftime("%H:%M:%S")
